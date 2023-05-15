@@ -6,6 +6,7 @@ import NavBar from "./NavBar";
 import About from "./pages/About.js";
 import Projects from "./pages/Projects.js";
 import Contacts from "./pages/Contact.js";
+import Home from "./pages/Home";
 export default function Layout() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
@@ -20,16 +21,17 @@ export default function Layout() {
     }
   }, [isNavOpen]);
   return (
-    <div>
+    <div className={styles.main}>
       <NavBar isNavOpen={isNavOpen} toggleNav={toggleNav} />
-      <div id="main" className={styles.main}>
-        <div id="about" className={styles.about}>
+      <div id="home" className={styles.home}>
+        <Home />
+        <div>
           <About />
         </div>
-        <div id="projects">
+        <div id="projects" className={styles.projects}>
           <Projects />
         </div>
-        <div id="contacts">
+        <div id="contacts" className={styles.contacts}>
           <Contacts />
         </div>
       </div>
