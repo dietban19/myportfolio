@@ -1,7 +1,12 @@
 :root {
   --clr--primary-400: hsl(133, 80%, 43%);
   --clr-neutral-700: hsl(226, 48%, 11%);
-  --fs-400: 1rem;
+
+  --fs-400: 1.25rem;
+  --fs-500: 2rem;
+  --fs-600: 3rem;
+  --fs-700: 4rem;
+  --fs-800: 5rem;
 
   --ff-primary: "Be Vietnam Pro", sans-serif;
   --ff-body: var(--ff-primary);
@@ -15,6 +20,9 @@
   --size-500: 1rem;
   --size-700: 1.75rem;
   --size-800: 2rem;
+
+  --container-pad-400: 8rem;
+  --container-pad-100: 3rem;
 }
 
 /*
