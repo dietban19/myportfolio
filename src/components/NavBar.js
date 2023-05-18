@@ -6,20 +6,34 @@ import close from "../assets/images/icon-close.svg";
 import About from "./pages/About.js";
 import logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll, scroller } from "react-scroll";
 
-function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
+function NavBar({ isNavOpen, toggleNav }) {
   const [activeLink, setActiveLink] = useState("");
-  console.log(activeLink);
+
   useEffect(() => {
-    console.log(activeLink);
-    if (activeLink) {
-      alert(activeLink);
+    if (isNavOpen) {
+      console.log("open");
     }
-    if (window.location.hash === "#") {
-      alert("hello");
+  });
+
+  const handleCheckUrl = (link) => {
+    if (window.location.hash.charAt(0) !== "#") {
+      setTimeout(() => {
+        handleLinkClick(link);
+      }, 100);
+    } else {
+      handleLinkClick(link);
     }
-  }, []);
+  };
+
+  const handleLinkClick = (link) => {
+    scroller.scrollTo(link, {
+      duration: 500,
+      smooth: "easeInOutQuart",
+      offset: -90,
+    });
+  };
   return (
     <div>
       <div className={styles.primaryHeader}>
@@ -49,7 +63,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
               <li>
                 <Link
                   to="/#home"
-                  onClick={() => handleLinkClick("home")}
+                  onClick={() => handleCheckUrl("home")}
                   className={activeLink === "home" ? styles.activeLink : ""}
                 >
                   Home
@@ -58,7 +72,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
               <li>
                 <Link
                   to="/#about"
-                  onClick={() => handleLinkClick("about")}
+                  onClick={() => handleCheckUrl("about")}
                   className={activeLink === "about" ? styles.activeLink : ""}
                 >
                   About
@@ -67,7 +81,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
               <li>
                 <Link
                   to="/#projects"
-                  onClick={() => handleLinkClick("projects")}
+                  onClick={() => handleCheckUrl("projects")}
                   className={activeLink === "projects" ? styles.activeLink : ""}
                 >
                   Projects
@@ -76,7 +90,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
               <li>
                 <Link
                   to="/#contacts"
-                  onClick={() => handleLinkClick("contacts")}
+                  onClick={() => handleCheckUrl("contacts")}
                   className={activeLink === "contacts" ? styles.activeLink : ""}
                 >
                   Contact
@@ -93,7 +107,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
             <li>
               <Link
                 to="/#home"
-                onClick={() => handleLinkClick("home")}
+                onClick={() => handleCheckUrl("home")}
                 className={activeLink === "home" ? styles.activeLink : ""}
               >
                 Home
@@ -102,7 +116,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
             <li>
               <Link
                 to="/#about"
-                onClick={() => handleLinkClick("about")}
+                onClick={() => handleCheckUrl("about")}
                 className={activeLink === "about" ? styles.activeLink : ""}
               >
                 About
@@ -111,7 +125,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
             <li>
               <Link
                 to="/#projects"
-                onClick={() => handleLinkClick("projects")}
+                onClick={() => handleCheckUrl("projects")}
                 className={activeLink === "projects" ? styles.activeLink : ""}
               >
                 Projects
@@ -120,7 +134,7 @@ function NavBar({ isNavOpen, toggleNav, handleLinkClick }) {
             <li>
               <Link
                 to="/#contacts"
-                onClick={() => handleLinkClick("contacts")}
+                onClick={() => handleCheckUrl("contacts")}
                 className={activeLink === "contacts" ? styles.activeLink : ""}
               >
                 Contact

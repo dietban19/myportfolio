@@ -2,20 +2,11 @@ import React from "react";
 import NavBar from "../NavBar.js";
 import styles from "./FEM.module.css";
 
-function FEM({ handleLinkClick }) {
-  // const handleLinkClick = (link) => {
-  //   setActiveLink(link);
-
-  //   scroller.scrollTo(link, {
-  //     duration: 500,
-  //     smooth: "easeInOutQuart",
-  //     offset: -90,
-  //   });
-  // };
+function FEM({ isNavOpen, toggleNav }) {
   return (
     <div>
       <div>
-        <NavBar handleLinkClick={handleLinkClick} />
+        <NavBar isNavOpen={isNavOpen} toggleNav={toggleNav} />
         <div className={styles.container}>
           <ul>
             <li>

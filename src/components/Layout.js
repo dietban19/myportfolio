@@ -9,41 +9,25 @@ import Projects from "./pages/Projects.js";
 import Contacts from "./pages/Contact.js";
 import Home from "./pages/Home";
 
-export default function Layout() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+export default function Layout({ isNavOpen, toggleNav }) {
+  // const [isNavOpen, setIsNavOpen] = useState(false);
   const navigate = useNavigate();
-  const handleLinkClick = (link) => {
-    scroller.scrollTo(link, {
-      duration: 500,
-      smooth: "easeInOutQuart",
-      offset: -90,
-    });
-  };
-  useEffect(() => {
-    if (window.location.hash === "#") {
-      console.log("hello");
-      alert("hello");
-    }
-  }, []);
-  const toggleNav = () => {
-    setIsNavOpen((prevState) => !prevState);
-  };
 
-  useEffect(() => {
-    if (isNavOpen) {
-      document.body.style.overflow = "";
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isNavOpen]);
+  // const toggleNav = () => {
+  //   setIsNavOpen((prevState) => !prevState);
+  // };
+
+  // useEffect(() => {
+  //   if (isNavOpen) {
+  //     document.body.style.overflow = "";
+  //   } else {
+  //     document.body.style.overflow = "";
+  //   }
+  // }, [isNavOpen]);
 
   return (
     <div className={styles.main}>
-      <NavBar
-        isNavOpen={isNavOpen}
-        toggleNav={toggleNav}
-        handleLinkClick={handleLinkClick}
-      />
+      <NavBar isNavOpen={isNavOpen} toggleNav={toggleNav} />
       <div id="home" className={styles.home}>
         <Home />
         <div>
