@@ -11,11 +11,20 @@ import { animateScroll as scroll, scroller } from "react-scroll";
 function NavBar({ isNavOpen, toggleNav }) {
   const [activeLink, setActiveLink] = useState("");
 
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const checkScreenSize = () => {
+    setIsSmallScreen(
+      window.innerWidth <
+        37.5 * parseFloat(getComputedStyle(document.documentElement).fontSize)
+    );
+  };
   useEffect(() => {
-    if (isNavOpen) {
-      console.log("open");
-    }
-  });
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   const handleCheckUrl = (link) => {
     if (window.location.hash.charAt(0) !== "#") {
@@ -28,10 +37,15 @@ function NavBar({ isNavOpen, toggleNav }) {
   };
 
   const handleLinkClick = (link) => {
+    toggleNav();
+    let offsetsize = -90;
+    if (isSmallScreen) {
+      offsetsize = -60;
+    }
     scroller.scrollTo(link, {
       duration: 500,
       smooth: "easeInOutQuart",
-      offset: -90,
+      offset: offsetsize,
     });
   };
   return (
