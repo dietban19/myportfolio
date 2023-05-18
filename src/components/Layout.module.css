@@ -91,16 +91,21 @@
     /* left: 1rem; */
     top: 60px;
     /* height: 100vh; */
-    margin: 0px 0px 30px 0px;
+    left: 0px;
     width: 100%;
     position: fixed;
     display: block;
     background-color: var(--clr-neutral-400);
-    z-index: 2;
+    z-index: 1000;
     padding: 20px;
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.2);
   }
   .secondaryNavigation nav {
-    background: red;
+    right: 0px;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
   }
   .navList {
     flex-direction: column;
@@ -116,19 +121,31 @@
     border: none;
   }
   .mobileList {
-    list-style: none;
-    display: grid;
+    list-style: circle;
+
     text-align: center;
     padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
   }
   .mobileList li {
+    left: 0;
     display: flex;
     text-align: center;
     margin-bottom: 2rem;
+
     /* background-color: green; */
-    margin-left: 20px;
+  }
+  .mobileList li a {
+    /* background-color: red; */
+    text-decoration: none;
+    color: var(--clr-primary-500);
   }
   .topHeader {
+    z-index: 1;
     height: 60px;
     padding: 20px;
     display: flex;
