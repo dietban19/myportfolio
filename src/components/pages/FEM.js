@@ -5,8 +5,8 @@ import styles from "./FEM.module.css";
 function FEM({ isNavOpen, toggleNav }) {
   return (
     <div>
+      <NavBar isNavOpen={isNavOpen} toggleNav={toggleNav} />
       <div>
-        <NavBar isNavOpen={isNavOpen} toggleNav={toggleNav} />
         <div className={styles.container}>
           <ul>
             <li>
@@ -28,6 +28,20 @@ function FEM({ isNavOpen, toggleNav }) {
               </a>
             </li>
           </ul>
+          <p>
+            {" "}
+            molestiae sed nihil dolores ab ipsa quae id esse reprehenderit eos
+            culpa error? Sit blanditiis eius et autem quia aut quibusdam officia
+            in natus voluptas ut quia fugit ab earum numquam qui esse
+            reprehenderit.
+          </p>
+          <p>
+            {" "}
+            molestiae sed nihil dolores ab ipsa quae id esse reprehenderit eos
+            culpa error? Sit blanditiis eius et autem quia aut quibusdam officia
+            in natus voluptas ut quia fugit ab earum numquam qui esse
+            reprehenderit.
+          </p>
         </div>
       </div>
     </div>

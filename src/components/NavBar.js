@@ -100,8 +100,11 @@ function NavBar({ isNavOpen, toggleNav }) {
           </nav>
         </div>
       </div>
-      <div className={styles.secondaryNavigation}>
-        <nav style={isNavOpen ? { display: "block" } : { display: "none" }}>
+      <div
+        className={styles.secondaryNavigation}
+        style={isNavOpen ? { display: "block" } : { display: "none" }}
+      >
+        <nav>
           {/* <div className={styles.secondaryNavigationContainer}> */}
           <ul aria-label="Primary" role="list" className={styles.mobileList}>
             <li>
