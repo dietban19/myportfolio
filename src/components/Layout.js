@@ -12,18 +12,21 @@ import Home from "./pages/Home";
 export default function Layout() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const navigate = useNavigate();
-
+  const handleLinkClick = (link) => {
+    scroller.scrollTo(link, {
+      duration: 500,
+      smooth: "easeInOutQuart",
+      offset: -90,
+    });
+  };
+  useEffect(() => {
+    if (window.location.hash === "#") {
+      console.log("hello");
+      alert("hello");
+    }
+  }, []);
   const toggleNav = () => {
     setIsNavOpen((prevState) => !prevState);
-  };
-
-  const scrollToElement = (elementId) => {
-    scroller.scrollTo(elementId, {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    });
-    navigate(`/#${elementId}`);
   };
 
   useEffect(() => {
@@ -39,7 +42,7 @@ export default function Layout() {
       <NavBar
         isNavOpen={isNavOpen}
         toggleNav={toggleNav}
-        scrollToElement={scrollToElement}
+        handleLinkClick={handleLinkClick}
       />
       <div id="home" className={styles.home}>
         <Home />

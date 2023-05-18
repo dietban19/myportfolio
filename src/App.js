@@ -1,6 +1,4 @@
-import logo from "./logo.svg";
 import Layout from "./components/Layout";
-import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./components/pages/About.js";
 import Contact from "./components/pages/Contact.js";
