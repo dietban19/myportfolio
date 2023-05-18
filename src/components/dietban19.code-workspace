@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../../dietban19"
+		},
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../Summer-Projects/FRONT-ENDMENTOR/3.Results"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "dietban19"
+	}
+}
