@@ -1,5 +1,7 @@
 :root {
   --clr--primary-400: hsl(133, 80%, 43%);
+
+  --clr-neutral-400: rgb(233, 233, 233);
   --clr-neutral-700: hsl(226, 48%, 11%);
 
   --fs-400: 1.25rem;

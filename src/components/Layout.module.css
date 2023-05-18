@@ -89,15 +89,15 @@
   }
   .secondaryNavigation {
     display: block;
-    inset: 7rem var(--size-400) auto;
-    background-color: var(--clr-very-light-gray);
-    border-radius: var(--size-100);
-    padding: var(--size-700);
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    max-height: 200px;
+    inset: 70px 30px 0px 30px;
+    background-color: var(--clr-neutral-400);
+    border-radius: 10px;
+    z-index: 2;
   }
   .navList {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   .mobileNavToggle {
     display: block;
@@ -106,9 +106,23 @@
     border: none;
     padding: 0.5em;
   }
-  .mobileNavToggle img {
-    /* width: 21px;
-    height: 22px; */
+  .mobileNavToggle:hover {
+    border: none;
+  }
+  .mobileList {
+    margin: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 0;
+  }
+  .mobileList li {
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
   }
   .topHeader {
     height: 60px;

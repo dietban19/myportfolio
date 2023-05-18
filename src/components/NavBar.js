@@ -13,11 +13,7 @@ function NavBar({ isNavOpen, toggleNav }) {
     setActiveLink(link);
   }
   return (
-    <div
-      className={`${styles.primaryHeader} ${
-        isNavOpen && window.innerWidth < 600 ? styles.navOpen : ""
-      }`}
-    >
+    <div className={styles.primaryHeader}>
       <div className={styles.topHeader}>
         <div className={styles.logoContainer}>
           <img src={logo} alt="logo" />
