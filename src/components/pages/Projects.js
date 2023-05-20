@@ -12,6 +12,11 @@ export default function Projects() {
             <Link to="/FEM" target="_blank">
               <button>Click Here!</button>
             </Link>
+            <button>
+              <a href="https://deluxe-sprite-40889e.netlify.app/">
+                Try my Age Calculator
+              </a>
+            </button>
           </div>
         </div>
       </section>
